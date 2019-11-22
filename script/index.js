@@ -23,7 +23,6 @@ let graphicsBox;
 let barsBox;
 let controlsBox;
 let outputBox;
-let sp;
 class Fighter {
   constructor(name, charaName) {
     //'contructor' is in all JS classes
@@ -80,9 +79,9 @@ class Fighter {
        let recovery = this.tek * 2;
        //heal player
        koCheck(this,-recovery);
-       outputBox.innerHTML = this.name + ' Recovered ' + recovery;
+       outputBox.innerHTML +=  '<br>' + this.name + ' Recovered ' + recovery;
     } else{
-      outputBox.innerHTML = "not enough SP"
+      outputBox.innerHTML += '<br>' + "not enough SP";
 
     }
 endTurn()
