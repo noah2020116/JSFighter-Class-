@@ -46,7 +46,7 @@ class Fighter {
     let reducedDamage = Math.round(damage / 4)
     let dodge = Math.round(Math.random())
     if (dodge) {
-      outputBox.innerHTML += '<br>' + target.name + ' dodged ' + this.name + '\'s attack and was hit only hit for ' + reducedDamage + ' damage'; // outputs to the outputbox
+      outputBox.innerHTML += '<br>' + target.name + ' dodged ' + this.name + '\'s attack and was hit for ' + reducedDamage + ' damage'; // outputs to the outputbox
       damage = reducedDamage
       koCheck(target, damage); //runs ko check
     } else {
@@ -156,21 +156,21 @@ function updateBar(player, hpsp, min, max) {
 
 //This function makes the hp/sp bars and places them in the barsBox useing the updateBar
 function updateBars() {
-  barsBox.innerHTML = updateBar(Player0, 'hp', Player0.hp, START_HP)
-  barsBox.innerHTML += updateBar(Player0, 'sp', Player0.sp, START_SP)
-  barsBox.innerHTML += updateBar(Player1, 'hp', Player1.hp, START_HP)
-  barsBox.innerHTML += updateBar(Player1, 'sp', Player1.sp, START_SP)
+  barsBox.innerHTML = updateBar(Player0, 'hp', Player0.hp, START_HP);
+  barsBox.innerHTML += updateBar(Player0, 'sp', Player0.sp, START_SP);
+  barsBox.innerHTML += updateBar(Player1, 'hp', Player1.hp, START_HP);
+  barsBox.innerHTML += updateBar(Player1, 'sp', Player1.sp, START_SP);
 }
 
 // EndTurn code
 function endTurn() {
-  playerTurn = !playerTurn
+  playerTurn = !playerTurn;
   if (koCheck(Player0, 0) || koCheck(Player1, 0)){
 
     hideControls();
     updateBars();
   } else {
-    showControls()
+    showControls();
     updateBars();
   }
 }
